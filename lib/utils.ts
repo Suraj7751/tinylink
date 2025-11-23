@@ -1,4 +1,6 @@
 // lib/utils.ts
+import type { PrismaClient } from "@prisma/client";
+
 export function isValidUrl(str: string) {
   try {
     const url = new URL(str);
@@ -18,7 +20,7 @@ export function randomCode(length = 6) {
   return res;
 }
 
-export async function genUniqueCode(prisma, tries = 8) {
+export async function genUniqueCode(prisma: PrismaClient, tries = 8) {
   for (let i = 0; i < tries; i++) {
     const len = 6 + Math.floor(Math.random() * 3); // 6-8
     const code = randomCode(len);
