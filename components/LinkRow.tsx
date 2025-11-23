@@ -1,3 +1,4 @@
+// components/LinkRow.tsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -18,7 +19,7 @@ export default function LinkRow({ link, onDelete, onCopy }: any) {
         </a>
       </td>
 
-      {/* URL */}
+      {/* URL – truncated so it doesn't break layout */}
       <td className="p-3 max-w-[45ch] truncate text-slate-700">
         <a href={link.url} target="_blank" className="hover:underline">
           {link.url}
